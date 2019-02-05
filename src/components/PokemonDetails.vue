@@ -36,10 +36,8 @@ export default {
       const request = axios(`https://pokeapi.co/api/v2/pokemon-species/${id}/`);
         request.then(res => this.details = res.data)      
         request.then(res => this.flavorText = this.findFlavorText('en',res.data.flavor_text_entries))
-        //request.then(res => this.flavorText = res.data.flavor_text_entries[0].flavor_text)
-        //request.then(res => this.flavorText = this.testMethod('lorem'))
         request.then(res => this.getEvolutionChain(res.data.evolution_chain.url))
-        //request.then(res => this.evolutions = this.findEvolutions(this.evoChain.evolves_to))
+
       
     },
     getEvolutionChain(url) {

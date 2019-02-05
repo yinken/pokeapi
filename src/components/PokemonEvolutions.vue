@@ -5,8 +5,8 @@
         <span v-if="pokemon.name == evolutions.species.name" class="is-current">
           <strong>{{evolutions.species.name}}</strong>
         </span>
-        <span v-else class="is-basic">
-          <a v-bind:pokemon="pokemon" v-on:mouseover="getPokemon(evolutions.species.name)">{{evolutions.species.name}}</a>
+        <span v-else class="is-basic" v-bind:pokemon="pokemon" v-on:mouseover="getPokemon(evolutions.species.name)">
+          <router-link :to="{ name: 'pokemon', params: { name: evolutions.species.name }}">{{evolutions.species.name}}</router-link>
         </span>      
       </div>
       <div class="evolution" v-bind:evolutions="evolutions" style="text-transform: capitalize;">
@@ -15,8 +15,8 @@
             <span v-if="pokemon.name == evolution.species.name" class="is-current">
               <strong>{{evolution.species.name}}</strong>
             </span>
-            <span v-else class="is-evolution">
-              <a v-on:mouseover="getPokemon(evolution.species.name)">{{evolution.species.name}}</a>
+            <span v-else class="is-evolution" v-on:mouseover="getPokemon(evolution.species.name)">
+              <router-link :to="{ name: 'pokemon', params: { name: evolution.species.name }}">{{evolution.species.name}}</router-link>
             </span>
           </div>
           <div>
@@ -24,15 +24,15 @@
               <span v-if="pokemon.name == sub_evolution.species.name">
                 <strong>{{sub_evolution.species.name}}</strong>
               </span>
-              <span v-else class="is-evolution">
-                <a v-on:mouseover="getPokemon(sub_evolution.species.name)">{{sub_evolution.species.name}}</a>
+              <span v-else class="is-evolution" v-on:mouseover="getPokemon(sub_evolution.species.name)">
+                <router-link :to="{ name: 'pokemon', params: { name: sub_evolution.species.name }}">{{sub_evolution.species.name}}</router-link>
               </span>
               <div v-bind:key="sub_sub_evolution.name" v-for="sub_sub_evolution in sub_evolution.evolves_to">
                 <span v-if="pokemon.name == sub_sub_evolution.species.name" class="is-current">
                   <strong>{{sub_sub_evolution.species.name}}</strong>                  
                 </span>
-                <span v-else class="is-evolution">
-                  <a v-on:mouseover="getPokemon(sub_sub_evolution.species.name)">{{sub_sub_evolution.species.name}}</a>                  
+                <span v-else class="is-evolution" v-on:mouseover="getPokemon(sub_sub_evolution.species.name)">
+                  <router-link :to="{ name: 'pokemon', params: { name: sub_sub_evolution.species.name }}">{{sub_sub_evolution.species.name}}</router-link>
                 </span>
               </div>              
             </div>
@@ -45,9 +45,6 @@
 
   </div>  
 </template>
-
-
-
 <script>
 import axios from 'axios';
 import EvolutionInfo from './EvolutionInfo'
@@ -71,7 +68,7 @@ export default {
   }
 }
 </script>
-<style lang="sass" scoped>
+<style lang="sass">
 .evolutions 
   display: flex
   flex-direction: row
@@ -97,17 +94,12 @@ export default {
   .evolution
     display: flex
     flex-direction: column
-    //flex-basis: 25%
     justify-content: flex-start
     align-items: flex-start
     &:nth-child(2)
-      //flex-basis: 33%
-
       div 
         display: flex
         flex-direction: row
-        //flex-basis: 50%
-
         &:nth-child(2)
           display: flex
           flex-direction: column
@@ -116,10 +108,5 @@ export default {
             display: flex
             flex-direction: row
             justify-content: flex-start
-
-
-
-
-
 
 </style>

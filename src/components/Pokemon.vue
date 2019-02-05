@@ -22,15 +22,13 @@
 </template>
 
 <script>
-
 import PokemonDetails from './PokemonDetails';
 export default {
   name: 'Pokemon',
   props: ["pokemon","details"],   
   components: {
     PokemonDetails
-  },
-  methods: {}
+  }
 }
 </script>
 <style lang="sass">
