@@ -77,13 +77,13 @@ export default {
   margin: 1rem 0
   justify-content: center
   overflow-y: auto
-  padding-left: 8rem
+  padding-left: 2rem
   padding-right: 0rem
   padding-top: .5rem
   padding-bottom: .5rem
   span 
     padding: .25rem
-    min-width: 100px
+    min-width: 112px
     display: flex
     justify-content: center
     align-items: center
