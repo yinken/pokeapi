@@ -23,3 +23,7 @@ Please run `npm install` and `npm run serve` to start the development server. It
 
 ## CSS adjustments
 - We are making only small adjusments to the styles provided by Bulma, to make the pokemon grid and subsequent layouts behave the way we want to. This is done using SASS, the styles are located in the applicable components.
+
+## Possible improvements
+- Start loading the first 20ish Pokemon, lazy-load additional Pokemon as the user scrolls down
+- Soting/Filtering functionality. Unfortunately, there was not enough time for that
