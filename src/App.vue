@@ -11,7 +11,7 @@
 </template>
 
 <style lang="sass">
-  @import "~bulma/css/bulma.css";
+  @import "~bulma/bulma";
   .card-header-title
     flex-direction: column
     justify-content: center
