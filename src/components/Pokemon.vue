@@ -3,7 +3,7 @@
     <article class="card pokemon">
       <div class="card-header">        
         <div class="card-header-icon"><span class="icon is-large"><img v-bind:src="pokemon.sprites.front_shiny"/></span></div>
-        <div class="card-header-title" style="text-transform: capitalize;">
+        <div class="card-header-title">
           <p class="title is-size-5">{{ pokemon.name }}</p>
           <p class="subtitle is-size-6">
             <strong>XP:</strong> {{ pokemon.base_experience }} - 
@@ -32,7 +32,11 @@ export default {
 }
 </script>
 <style lang="sass">
-  .pokemon 
+  .pokemon
+    .card-header
+      text-transform: capitalize
+      justify-content: center
+      flex-wrap: wrap
     .tag
       text-transform: capitalize
 </style>

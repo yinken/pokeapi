@@ -75,6 +75,7 @@ export default {
   width: 100%
   margin: 1rem 0
   justify-content: center
+  overflow-y: auto
   span 
     padding: .25rem
     height: 25px
